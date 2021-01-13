@@ -1,106 +1,67 @@
-def check(one, two, three, four, five, six, seven, eight, nine):
-    global status
-    if((one == 'X') and (two == 'X') and (three == 'X')): #all conditions for winning 
-        status = 'Xwin'
-    elif((one == '0') and (two == '0') and (three == '0')):
-        status = '0win'
-    elif((four == 'X') and (five == 'X') and (six == 'X')):
-        status = 'Xwin'
-    elif((four == '0') and (five == '0') and (six == '0')):
-        status = '0win'
-    elif((seven == 'X') and (eight == 'X') and (nine == 'X')):
-        status = 'Xwin'
-    elif((seven == '0') and (eight == '0') and (nine == '0')):
-        status = '0win'
-    elif((one == 'X') and (five == 'X') and (nine == 'X')):
-        status = 'Xwin'
-    elif((one == '0') and (five == '0') and (nine == '0')):
-        status = '0win'
-    elif((three == 'X') and (five == 'X') and (seven == 'X')):
-        status = 'Xwin'
-    elif((three == '0') and (five == '0') and (seven == '0')):
-        status = '0win'
-    elif((one != '---') and (two != '---') and (three != '---') and (four != '---') and (five != '---') and (six != '---') and (seven != '---') and (eight != '---') and (nine != '---')):
-        status = 'draw'
-    
-def tic_tac(num, piece):   # num = for pos, piece = X / 0
-    global one
-    global two
-    global three
-    global four
-    global five
-    global six
-    global seven
-    global eight
-    global nine  
-              
-    if num == 1:
-        one = piece
-    elif num == 2:
-        two = piece
-    elif num == 3:
-        three = piece
-    elif num == 4:
-        four = piece
-    elif num == 5:
-        five = piece
-    elif num == 6:
-        six = piece
-    elif num == 7:
-        seven = piece
-    elif num == 8:
-        eight = piece
+import random
+element_matrix = ['-' for x in range(1, 10)] #fill all places with blank for the start
+
+def put(pos, element, element_matrix):
+    element_matrix[int(pos)] = element
+    return element_matrix
+
+def show_game(element_matrix):
+    print(" " + element_matrix[0] + " | " + element_matrix[1] + " | " + element_matrix[2] + " ")
+    print("-----------")
+    print(" " + element_matrix[3] + " | " + element_matrix[4] + " | " + element_matrix[5] + " ")
+    print("-----------")
+    print(" " + element_matrix[6] + " | " + element_matrix[7] + " | " + element_matrix[8] + " ")
+
+def is_winner(element, element_matrix):
+    if((element_matrix[0] == element and element_matrix[1] == element and element_matrix[2] == element) or
+    (element_matrix[3] == element and element_matrix[4] == element and element_matrix[5] == element) or
+    (element_matrix[6] == element and element_matrix[7] == element and element_matrix[8] == element) or
+    (element_matrix[0] == element and element_matrix[3] == element and element_matrix[6] == element) or
+    (element_matrix[1] == element and element_matrix[4] == element and element_matrix[7] == element) or
+    (element_matrix[2] == element and element_matrix[5] == element and element_matrix[8] == element) or
+    (element_matrix[0] == element and element_matrix[4] == element and element_matrix[8] == element) or
+    (element_matrix[2] == element and element_matrix[4] == element and element_matrix[6] == element)):
+        return True
     else:
-        nine = piece
+        return False
 
-    print('''                          
-    {}|{}|{}
-    {}|{}|{}
-    {}|{}|{}
-    '''.format(one, two, three, four, five, six, seven, eight, nine))
-    check(one, two, three, four, five, six, seven, eight, nine)
-    if status == 'Xwin':
-        print('X wins')
-    elif status == '0wins':
-        print('0 wins')
-    elif status == 'draw':
-        print('Its A Draw')
 
-def multi_player(dine):
-    print('Get ready')
-    tic_tac(1, '---')
-    while(status=='ongoing'):
-        if dine == 'one':
-            num = int(input('Enter your pos [1 - 9]'))
-            if num - 9 > 0 or num < 0:
-                print('Enter valid number')
-                continue
-            tic_tac(num, 'X')
-            dine = 'two'
+def is_empty(pos, element_matrix):
+    if (pos != ''):
+        if (element_matrix[int(pos)] == '-'):
+            return True
         else:
-            num = int(input('Enter your pos [1 - 9]'))
-            tic_tac(num, '0')
-            dine = 'one'
-        
+             return False
+    else:
+        return False
 
-def comp_player():
-    tic_tac()
-
-print('For Double Player Press d')
-print('For a game with Computer Player Press c')
-mode = input('Please select mode ')
-one = '---'                 #rather than using one , two we can use a array or list for simplisity
-two = '---'
-three = '---'
-four = '---'
-five = '---'
-six = '---'
-seven = '---'
-eight = '---'
-nine = '---'
-status = 'ongoing'
-dine = 'one'
-if(mode == 'd'):
-    multi_player(dine)
-else:
-    comp_player()
+print("X & 0")
+show_game(element_matrix)
+player_status = input('Press "s" to start the Game : ')
+elements = ['X', '0']
+element = random.choice(elements)
+while(player_status == 's'):
+    if (element == 'X'):
+        pos = input("Enter the position to place X [ 0-8 ] : ")
+        if (bool(is_empty(pos, element_matrix)) == True):
+            element_matrix = put(pos, element, element_matrix)
+            show_game(element_matrix)
+            if (bool(is_winner(element, element_matrix)) == True):
+                print("{} is the winner".format(element))
+                break       
+            element = "0"
+        else:
+            print("The position has been taken please enter another position ")
+            continue
+    else:
+        pos = input("Enter the position to place 0 [ 0-8 ] : ")
+        if (bool(is_empty(pos, element_matrix)) == True):
+            element_matrix = put(pos, element, element_matrix)
+            show_game(element_matrix)
+            if (bool(is_winner(element, element_matrix)) == True):
+                print("{} is the winner".format(element))
+                break       
+            element = "X"
+        else:
+            print("The position has been taken please enter another position ")
+            continue
