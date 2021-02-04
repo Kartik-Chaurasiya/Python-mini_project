@@ -65,6 +65,8 @@ def two_player(element_matrix):
             else:
                 print("The position has been taken please enter another position or enter a proper number ")
                 continue
+def random_comp(element_matrix):
+    pass
 
 print("X & 0")
 show_game(element_matrix)
@@ -74,3 +76,5 @@ print("1. Random Computer mode : r")
 game_type = input("Enter your choice : ")
 if (game_type == 't'):
     two_player(element_matrix)
+elif(game_type == 'r'):
+    random_comp(element_matrix)
