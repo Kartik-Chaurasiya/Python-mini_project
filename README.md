@@ -10,7 +10,7 @@
 
 - [ ] Make as many projects as I can
 - [ ] Get profound knowledge of the languages
-- [ ] Be able to implement this languages efficiently
+- [ ] Be able to implement the languages efficiently
 
 | No. |  Project name: | Concept Used |
 | ------------------- | ------------------- | ------------------- |
