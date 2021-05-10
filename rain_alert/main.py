@@ -6,9 +6,9 @@ import os
 
 
 end_point = 'https://api.openweathermap.org/data/2.5/onecall'
-api_key = '2cf27db91ba310d0a4cb40c4a611c20e'
-account_sid = 'AC1170b135bf183ccd059e820039b8ca20'
-auth_token = '7cabb1d4121a69ff527677ac9cfbf39c'
+api_key = 'weather api'
+account_sid = 'twilio acc'
+auth_token = 'twilio acc'
 
 parameters = {
     'lat' : 19.456360,
@@ -35,8 +35,8 @@ if will_rain:
     message = client.messages \
                     .create(
                         body="Its gonna rain.",
-                        from_='+14692948199',
-                        to='9579337529'
+                        from_='your twilio no ',
+                        to='your no'
                     )
 
     print(message.status)
