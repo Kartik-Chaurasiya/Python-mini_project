@@ -41,6 +41,7 @@
 | 25 | Quizzler app | Python |	
 | 26 | Rain alert | Python |	
 | 27 | Rock Paper Scissors | Python |	
+| 27 | Scrapper | Python |
 | 28 | Snake Game | Python |	
 | 29 | Stock News | Python |	
 | 30 | Study Time vs Score prediction | Python, ML, Flask |	
