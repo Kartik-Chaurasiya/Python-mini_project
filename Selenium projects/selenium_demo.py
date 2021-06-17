@@ -184,6 +184,12 @@ driver = webdriver.Chrome(executable_path = chrome_driver_path)
 # bot.find_followers()
 # bot.follow()
 
+
+
+'''Selenium and bs4 project
+Scraping zillow website and uploading it to google forms
+'''
+
 header = {
     "User-Agent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36",
     "Accept-Language" : "en-GB,en-US;q=0.9,en;q=0.8,hi;q=0.7"
