@@ -42,16 +42,17 @@
 | 26 | Rain alert | Python |	
 | 27 | Rock Paper Scissors | Python |	
 | 27 | Scrapper | Python |
-| 28 | Snake Game | Python |	
-| 29 | Stock News | Python |	
-| 30 | Study Time vs Score prediction | Python, ML, Flask |	
-| 31 | Tic Tac Toe | Python |
-| 32 | Tip Calculator | Python |
-| 33 | Treasure island | Python |
-| 34 | Turtle Crossing | Python |
-| 35 | Turtle Race | Python |
-| 36 | US state Guess Game | Python |
-| 37 | Chat Bot | Python, ML, Flask |
-| 38 |  | Python |
+| 28 | Selenium Projects | Python, Bs4, Selenium |
+| 29 | Snake Game | Python |	
+| 30 | Stock News | Python |	
+| 31 | Study Time vs Score prediction | Python, ML, Flask |	
+| 32 | Tic Tac Toe | Python |
+| 33 | Tip Calculator | Python |
+| 34 | Treasure island | Python |
+| 35 | Turtle Crossing | Python |
+| 36 | Turtle Race | Python |
+| 37 | US state Guess Game | Python |
+| 38 | Chat Bot | Python, ML, Flask |
 | 39 |  | Python |
 | 40 |  | Python |
+| 41 |  | Python |
